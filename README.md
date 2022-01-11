@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Spacestagram
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Spacestagram is an app that shares photos from NASA’s Astronomy Picture of the Day API. Created for the Shopify Summer 2022 Front-End Challenge.
 
-## Available Scripts
+## How to run
 
-In the project directory, you can run:
+1. Clone this repo, then enter this repo via your terminal and run npm install
+2. Create an environment file called .env and place it in the root of the clone directory (next to package-lock)
+3. Go to https://api.nasa.gov to get your free API key.
+4. In the .env file, add: REACT_APP_API_KEY=YOUR_KEY, replacing "YOUR_KEY" with the key you got from step 3.
+5. Run npm start and view the site at http://localhost:3000/
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology and Implementation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This app was made using React, JavaScript and the Chakra UI component library. Various other npm library components were used, such as the date-picker and the animated heart.
 
-### `npm test`
+The app loads in with 10 posts in the feed from randomly selected dates. Posts consist of photos and sometimes videos. The user can change the color theme of the site according to their preferences. They can also select a date from a date-picker component in the Header, and get all of the posts between that date and today's date (inclusive) in their feed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- User Interface based on Instagram
+- Animated Button for liking posts
+- A date-picker with which a user can browse all of the posts starting from a specific date
+- Fully responsive site that can be ran on mobile devices
+- Header items get added to a dropdown menu in smaller screen sizes
+- A "Read More" component for the picture descriptions so that posts take up less space
+- A Loading state/animation while awaiting NASA API data
+- A Switch component to toggle between a light theme and a dark theme for the app UI
+- Link at the bottom of page to take user back to the top via scroll animation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Accesibility
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I made a conscious effort to follow accesibility and semantic guidelines throughout this project, monitoring these attributes via Chrome's Lighthouse Accesibility Auditing.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![image](https://user-images.githubusercontent.com/36796876/148934047-cddf359e-b38a-4306-bc7c-2f576b20db6b.png)
