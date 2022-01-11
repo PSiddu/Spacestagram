@@ -55,7 +55,7 @@ export default function Landing() {
         fontFamily={"Roboto"}
         fontWeight={"bold"}
         variant="link"
-        textColor={"blue.400"}
+        textColor={"blue.600"}
         onClick={scrollfunc}
         marginBottom={"1%"}
       >

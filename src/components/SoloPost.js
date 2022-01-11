@@ -41,7 +41,7 @@ const SoloPost = (item) => {
           <Button
             variant="link"
             onClick={() => setTextToggle(!textToggle)}
-            textColor={"blue.400"}
+            textColor={"blue.600"}
           >
             Read More
           </Button>
@@ -102,6 +102,7 @@ const SoloPost = (item) => {
           allowFullScreen
           width="100%"
           height={"500rem"}
+          alt={item.title}
         />
       )}
 
@@ -116,7 +117,11 @@ const SoloPost = (item) => {
       >
         <Flex justifyContent={"space-between"}>
           <Flex marginBottom={"-2%"} marginTop={"-5%"} marginLeft={"-3%"}>
-            <Heart isClick={isClick} onClick={() => setClick(!isClick)} />
+            <Heart
+              isClick={isClick}
+              onClick={() => setClick(!isClick)}
+              alt="Like button"
+            />
           </Flex>
           <p
             style={{
