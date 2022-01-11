@@ -1,18 +1,30 @@
+// imports
 import React from "react";
 import { Box, Flex, Image, useColorMode, Button } from "@chakra-ui/react";
 import { useState } from "react";
 import Heart from "react-animated-heart";
 
+// This is the component that the map function in NasaData maps the API data to
+//   to create individual posts.
 const SoloPost = (item) => {
+  // toggle between lightmode and dark mode
   const { colorMode } = useColorMode();
+
+  // selected state of the like button for a particular "post"
   const [isClick, setClick] = useState(false);
+
+  // toggle the "read more" functionality of the "post" descriptions
   const [textToggle, setTextToggle] = useState(true);
 
+  // function that handles the "read more" functionality
   const ReadMore = () => {
+    // the first 200 characters only are showed before the read more appears
     const displayedString = textToggle
       ? item.explanation.slice(0, 200)
       : item.explanation;
 
+    // note: just like in Instagram's design, once "read more" is clicked,
+    //       description cannot be shrunk back.
     return (
       <p
         style={{
@@ -40,6 +52,7 @@ const SoloPost = (item) => {
     );
   };
 
+  // returning the actual post component
   return (
     <Flex
       direction="column"
@@ -49,6 +62,7 @@ const SoloPost = (item) => {
       paddingBottom="3%"
       marginLeft={["none", "none", "25%", "25%"]}
     >
+      {/* The title on top of posts */}
       <Box
         padding="0.7rem"
         borderColor={colorMode === "light" ? "#dbdbdb" : "#3f3f40"}
@@ -68,6 +82,9 @@ const SoloPost = (item) => {
         </h1>
       </Box>
 
+      {/* Upon noticing that some of the Astronomy pictures of the day were actually
+            videos, I added this ternary operator to change the component to an iframe
+            for cases where the post is a video. */}
       {item.media_type === "image" ? (
         <Box
           bg="black"
@@ -88,6 +105,7 @@ const SoloPost = (item) => {
         />
       )}
 
+      {/* The like button and date are here */}
       <Box
         padding="0.7rem"
         borderColor={colorMode === "light" ? "#dbdbdb" : "#3f3f40"}
@@ -110,8 +128,7 @@ const SoloPost = (item) => {
           </p>
         </Flex>
 
-        {/* </Circle> */}
-
+        {/* The previously defined ReadMore component for the description is added here */}
         <ReadMore />
         {"\n"}
       </Box>

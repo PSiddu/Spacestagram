@@ -1,7 +1,7 @@
+// imports
 import React from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-
 import {
   theme,
   ChakraProvider,
@@ -9,6 +9,7 @@ import {
   CSSReset,
 } from "@chakra-ui/react";
 
+// Creating a custom theme to be used
 const customTheme = {
   ...theme,
   initialColorMode: "light",
@@ -22,7 +23,9 @@ const customTheme = {
   },
 };
 
-function App() {
+// By adding these various Chakra UI tags, Routing becomes easier if needed,
+//   and dark mode functionality is enabled.
+const App = () => {
   return (
     <BrowserRouter>
       <ChakraProvider theme={customTheme}>
@@ -38,6 +41,6 @@ function App() {
       </ChakraProvider>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

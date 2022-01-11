@@ -1,5 +1,7 @@
+/* Unfortunately, there is no way to inline style placeholder text,
+    and I did not want it to be affected by light/dark mode switches,
+    so I declare its color here. */
 input::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: grey;
-  opacity: 1; /* Firefox */
+  opacity: 1;
 }

@@ -1,25 +1,27 @@
+// imports
 import React from "react";
 import { Box, Heading, Flex, Text, Stack, Image } from "@chakra-ui/react";
 import { Switch, useColorMode } from "@chakra-ui/react";
-
 import { LinkBox, LinkOverlay } from "@chakra-ui/react";
 import spacestagramBlack from "../assets/spacestagramBlack.png";
 import spacestagramWhite from "../assets/spacestagramWhite.png";
-
-import DayPickerInput from "react-day-picker/DayPickerInput";
-import "react-day-picker/lib/style.css";
+// import DayPickerInput from "react-day-picker/DayPickerInput";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import "./Header.css";
 
-// Header component
-const Header = (props, setStartDate) => {
-  // drop down menu for mobile
+// This is the header component of the app
+const Header = (props, startDate, setStartDate) => {
+  // drop down menu state for mobile
   const [show, setShow] = React.useState(false);
-  // to toggle between lightmode and dark mode
+
+  // toggle between lightmode and dark mode
   const { colorMode, toggleColorMode } = useColorMode();
 
   // toggle drop down menu
   const toggleMenu = () => setShow(!show);
 
+  // icons for sandwich menu
   const CloseIcon = () => (
     <svg width="24" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
       <title>Close</title>
@@ -54,6 +56,7 @@ const Header = (props, setStartDate) => {
       width="100%"
       {...props}
     >
+      {/* Spacestagram logo, light and dark version */}
       <Flex align="left" mr={5} marginLeft={["none", "none", "15%", "15%"]}>
         <LinkBox color={colorMode === "light" ? "black" : "whiteDark"}>
           <Heading as="h1" letterSpacing="0px">
@@ -68,8 +71,8 @@ const Header = (props, setStartDate) => {
           </Heading>
         </LinkBox>
       </Flex>
-      {/* Search */}
 
+      {/* Search Field */}
       <Box
         display={["block", "block", "block", "block", "none"]}
         onClick={toggleMenu}
@@ -101,22 +104,27 @@ const Header = (props, setStartDate) => {
               textColor="black"
               borderColor={colorMode === "light" ? "#dbdbdb" : "#3f3f40"}
               borderWidth="2px"
+              borderRadius={["0px", "0px", "0px", "12px"]}
               align="center"
               bg="white"
               marginRight={["0px", "0px", "0px", "15%"]}
             >
-              <DayPickerInput
-                onDayChange={(date) =>
-                  props.setStartDate(date.toISOString().slice(0, 10))
-                }
-                borderColor={colorMode === "light" ? "#dbdbdb" : "#3f3f40"}
-                borderWidth="1px"
-                placeholder="YYYY-MM-DD"
+              {/* Note: setStartDate is passed in as a prop from the parent component,
+                        as the parent component needs the updated startDate state variable
+                        in order to send it to NasaData. Additionally, the component does not
+                        let you pick dates in the future, as that would break the API call.
+                        (Since future data does not exist.)  */}
+              <DatePicker
+                onChange={(date) => props.setStartDate(date)}
+                selected={props.startDate}
+                placeholderText={"YYYY-MM-DD"}
+                dateFormat={"yyyy-MM-dd"}
+                maxDate={new Date()}
               />
             </Flex>
           </Flex>
 
-          {/* Switch */}
+          {/* Theme Switch */}
           <Stack direction="row">
             <Text
               fontFamily={"Roboto"}
