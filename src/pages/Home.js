@@ -2,7 +2,7 @@ import React from "react";
 import { Flex, useColorMode, Button } from "@chakra-ui/react";
 import Header from "../components/Header";
 import NasaData from "../components/NasaData";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Landing() {
   const { colorMode } = useColorMode();
@@ -27,12 +27,10 @@ export default function Landing() {
         position="sticky"
         top={0}
         zIndex="2"
-        // boxShadow="lg"
         marginTop={0}
         borderBottomColor={colorMode === "light" ? "#dbdbdb" : "#3f3f40"}
         borderBottomWidth="2px"
         setStartDate={setStartDate}
-        //paddingTop="0"
       />
       <Flex>
         <NasaData startDate={startDate} />

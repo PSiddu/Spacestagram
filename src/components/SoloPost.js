@@ -1,16 +1,6 @@
 import React from "react";
-import {
-  Box,
-  Heading,
-  Flex,
-  Text,
-  Stack,
-  Image,
-  useColorMode,
-  Circle,
-  Button,
-} from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { Box, Flex, Image, useColorMode, Button } from "@chakra-ui/react";
+import { useState } from "react";
 import Heart from "react-animated-heart";
 
 const SoloPost = (item) => {

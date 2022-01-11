@@ -1,42 +1,21 @@
 import React from "react";
-import {
-  Box,
-  Heading,
-  Flex,
-  Text,
-  Stack,
-  Image,
-  LightMode,
-  Button,
-  background,
-} from "@chakra-ui/react";
-import { Switch, useColorMode, Divider } from "@chakra-ui/react";
-import { FaRegMoon } from "react-icons/fa";
-import { FiSun } from "react-icons/fi";
+import { Box, Heading, Flex, Text, Stack, Image } from "@chakra-ui/react";
+import { Switch, useColorMode } from "@chakra-ui/react";
+
 import { LinkBox, LinkOverlay } from "@chakra-ui/react";
 import spacestagramBlack from "../assets/spacestagramBlack.png";
 import spacestagramWhite from "../assets/spacestagramWhite.png";
 
-import { useEffect, useState } from "react";
-
 import DayPickerInput from "react-day-picker/DayPickerInput";
-import DayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import "./Header.css";
 
-import MomentLocaleUtils, {
-  formatDate,
-  parseDate,
-} from "react-day-picker/moment";
-
-// Header is all under one function
+// Header component
 const Header = (props, setStartDate) => {
   // drop down menu for mobile
   const [show, setShow] = React.useState(false);
   // to toggle between lightmode and dark mode
   const { colorMode, toggleColorMode } = useColorMode();
-
-  const today = new Date();
 
   // toggle drop down menu
   const toggleMenu = () => setShow(!show);
@@ -63,20 +42,6 @@ const Header = (props, setStartDate) => {
     </svg>
   );
 
-  // print the menu items, deal with dark mode cases
-  const MenuItems = ({ children, to = "/" }) => (
-    <LinkBox>
-      <Text
-        mt={{ base: 4, md: 0 }}
-        mr={6}
-        display="block"
-        color={colorMode === "light" ? "whiteDark" : "black"}
-      >
-        <LinkOverlay href={to}>{children}</LinkOverlay>
-      </Text>
-    </LinkBox>
-  );
-
   return (
     <Flex
       as="nav"
@@ -85,11 +50,8 @@ const Header = (props, setStartDate) => {
       wrap="wrap"
       padding="0.5rem"
       marginBottom="5%"
-      // bg="white"
       bg={colorMode === "light" ? "#ffffff" : "#282424"}
-      // color="white"
       width="100%"
-      //p={3}
       {...props}
     >
       <Flex align="left" mr={5} marginLeft={["none", "none", "15%", "15%"]}>
@@ -121,8 +83,8 @@ const Header = (props, setStartDate) => {
           show ? "block" : "none",
           show ? "block" : "none",
           "block",
-        ]} //{{ base: show ? "block" : "none", md: "block" }}
-        flexBasis={["100%", "100%", "100%", "100%", "auto", "auto"]} //{{ base: "100%", md: "auto" }}
+        ]}
+        flexBasis={["100%", "100%", "100%", "100%", "auto", "auto"]}
         paddingRight={"15%"}
       >
         <Flex
@@ -130,8 +92,6 @@ const Header = (props, setStartDate) => {
           justify={["center", "space-between", "flex-end", "flex-end"]}
           direction={["column", "column", "column", "column", "row"]}
           pt={[4, 4, 0, 0]}
-          // ml="10"
-          // mr="10"
         >
           <Flex>
             <Text fontFamily={"Roboto"} fontWeight={"bold"}>
@@ -143,20 +103,15 @@ const Header = (props, setStartDate) => {
               borderWidth="2px"
               align="center"
               bg="white"
-              // borderRadius={"50px"}
-              // marginLeft={"10px"}
-              // marginRight={["30%", "none", "none", "none"]}
               marginRight={["0px", "0px", "0px", "15%"]}
             >
               <DayPickerInput
                 onDayChange={(date) =>
                   props.setStartDate(date.toISOString().slice(0, 10))
                 }
-                // formatDate={formatDate}
                 borderColor={colorMode === "light" ? "#dbdbdb" : "#3f3f40"}
                 borderWidth="1px"
                 placeholder="YYYY-MM-DD"
-                // borderRadius={"50px"}
               />
             </Flex>
           </Flex>
@@ -174,17 +129,9 @@ const Header = (props, setStartDate) => {
               onChange={toggleColorMode}
               paddingTop={["30px", "30px", "30px", "0px"]}
               paddingLeft={["50%", "0px", "0px", "5px"]}
-              paddingTop={["30px", "30px", "30px", "0px"]}
-              // paddingRight="10px"
               fontSize="18px"
             ></Switch>
-            <Flex paddingTop={["30px", "30px", "30px", "0px"]}>
-              {/* {colorMode === "light" ? (
-            <FaRegMoon color="black" size="18px" />
-          ) : (
-            <FiSun size="18px" />
-          )} */}
-            </Flex>
+            <Flex paddingTop={["30px", "30px", "30px", "0px"]}></Flex>
           </Stack>
         </Flex>
       </Box>
