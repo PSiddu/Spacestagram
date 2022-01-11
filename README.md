@@ -2,6 +2,8 @@
 
 Spacestagram is an app that shares photos from NASA’s Astronomy Picture of the Day API. Created for the Shopify Summer 2022 Front-End Challenge.
 
+Live Version: https://spacestagram-siddup.herokuapp.com/
+
 ## How to Run
 
 1. Clone this repo, then enter this repo via your terminal and run `npm install`
