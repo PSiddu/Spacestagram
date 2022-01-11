@@ -103,6 +103,7 @@ const NasaData = (startDate) => {
             color="blue.500"
             size="xl"
             marginBottom={"500rem"}
+            position={"fixed"}
           />
         )}
       </div>

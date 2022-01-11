@@ -57,7 +57,8 @@ export default function Landing() {
         variant="link"
         textColor={"blue.600"}
         onClick={scrollfunc}
-        marginBottom={"1%"}
+        marginTop="10%"
+        marginBottom="1%"
       >
         Return to top
       </Button>
