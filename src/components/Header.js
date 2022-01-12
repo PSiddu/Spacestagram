@@ -8,7 +8,7 @@ import spacestagramWhite from "../assets/spacestagramWhite.png";
 // import DayPickerInput from "react-day-picker/DayPickerInput";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import "./Header.css";
+import "./Header.scss";
 
 // This is the header component of the app
 const Header = (props, startDate, setStartDate) => {
@@ -115,6 +115,7 @@ const Header = (props, startDate, setStartDate) => {
               align="center"
               bg="white"
               marginRight={["0px", "0px", "0px", "15%"]}
+              width={("auto", "auto", "auto", "100%")}
             >
               {/* Note: setStartDate is passed in as a prop from the parent component,
                         as the parent component needs the updated startDate state variable

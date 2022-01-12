@@ -1,7 +1,0 @@
-/* Unfortunately, there is no way to inline style placeholder text,
-    and I did not want it to be affected by light/dark mode switches,
-    so I declare its color here. */
-input::placeholder {
-  color: grey;
-  opacity: 1;
-}

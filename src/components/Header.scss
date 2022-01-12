@@ -1,0 +1,17 @@
+@import "node_modules/react-datepicker/src/stylesheets/datepicker.scss";
+
+/* Unfortunately, there is no way to inline style placeholder text,
+    and I did not want it to be affected by light/dark mode switches,
+    so I declare its color here. */
+input::placeholder {
+  color: grey;
+  font-family: "Roboto";
+  opacity: 1;
+}
+
+// I took advantage of scss to override the custom styles of the datepicker component.
+.react-datepicker-wrapper {
+  font-family: "Roboto";
+  padding-left: 8%;
+  font-weight: bold;
+}
