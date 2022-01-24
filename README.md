@@ -23,7 +23,7 @@ The app loads in with 10 posts in the feed from randomly selected dates. Posts c
 
 - User Interface based on Instagram
 - Animated Button for liking posts
-- A date-picker with which a user can browse all of the posts starting from a specific date
+- A date-picker with which a user can browse all of the posts starting from a specific date (note: the further you go back, the longer it takes to return all of the posts, infinite scroll can be implemented in the future to mitigate this)
 - Fully responsive site that can be ran on mobile devices
 - Header items get added to a dropdown menu in smaller screen sizes
 - A "Read More" component for the picture descriptions so that posts take up less space
