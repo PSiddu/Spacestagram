@@ -2,14 +2,14 @@
 
 Spacestagram is an app that shares photos from NASA’s Astronomy Picture of the Day API. Created for the Shopify Summer 2022 Front-End Challenge.
 
-Live Version: https://spacestagram-siddup.herokuapp.com/
+Live Version: https://spacestagramsiddup.netlify.app/
 
 ## How to Run
 
 1. Clone this repo, then enter this repo via your terminal and run `npm install`
 2. Create an environment file called `.env` and place it in the root of the clone directory (next to `package-lock.json`)
 3. Go to `https://api.nasa.gov` to get your free API key.
-4. In the `.env` file, add `REACT_APP_API_KEY=YOUR_KEY`, replacing `YOUR_KEY` with the key you got from step 3.
+4. In the `.env` file, add `REACT_APP_API_KEY=YOUR_KEY`, replacing `YOUR_KEY` with the key you got from step 3. Also, `NODE_VERSION` should be `16.20.2`.
 5. Run `npm start` and view the site at `http://localhost:3000/`
 
 
